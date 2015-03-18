@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="tux">tux-1000px.png</file>
+        <file>urnanonima.png</file>
+        <file>dilma.jpg</file>
+        <file>aecio.jpg</file>
+    </qresource>
+</RCC>
