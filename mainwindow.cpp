@@ -126,8 +126,8 @@ void MainWindow::block_buttons(bool set){
 void MainWindow::on_btn_00_clicked()
 {
     set_number(0);
-        if(s1 == true && s2 == true){
-            setPresident();
+    if(s1 == true && s2 == true){
+        setPresident();
     }
 }
 
@@ -136,7 +136,7 @@ void MainWindow::on_btn_11_clicked()
     set_number(1);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_22_clicked()
@@ -144,7 +144,7 @@ void MainWindow::on_btn_22_clicked()
     set_number(3);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_33_clicked()
@@ -152,7 +152,7 @@ void MainWindow::on_btn_33_clicked()
     set_number(3);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_44_clicked()
@@ -160,14 +160,14 @@ void MainWindow::on_btn_44_clicked()
     set_number(4);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_55_clicked()
 {
-        set_number(5);
-        if(s1 == true && s2 == true){
-            setPresident();
+    set_number(5);
+    if(s1 == true && s2 == true){
+        setPresident();
     }
 }
 
@@ -176,7 +176,7 @@ void MainWindow::on_btn_66_clicked()
     set_number(6);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_77_clicked()
@@ -184,7 +184,7 @@ void MainWindow::on_btn_77_clicked()
     set_number(7);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_88_clicked()
@@ -192,7 +192,7 @@ void MainWindow::on_btn_88_clicked()
     set_number(8);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_btn_99_clicked()
@@ -200,12 +200,11 @@ void MainWindow::on_btn_99_clicked()
     set_number(9);
     if(s1 == true && s2 == true){
         setPresident();
-}
+    }
 }
 
 void MainWindow::on_radioButton_clicked()
 {
-    block_buttons(false);
     ui->btn_confirma->setDisabled(false);
     ui->btn_branco->setDisabled(false);
     ui->btn_corrige->setDisabled(false);
