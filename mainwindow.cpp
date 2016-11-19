@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
+#include "QVector"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 bool s1, s2 = false;
 int n1,n2 = 0;
 int count = 0;
+QVector<int> vector(2);
 
 MainWindow::~MainWindow()
 {
@@ -20,6 +22,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_confirma_clicked()
 {
+    vector[0] = 100;
+    vector[1] = 200;
+
+    qDebug() << vector[0] << vector[1];
+
+
     count++;
     s1 = false;
     s2 = false;
@@ -29,19 +37,25 @@ void MainWindow::on_btn_confirma_clicked()
     ui->btn_corrige->setDisabled(true);
     ui->radioButton->setChecked(true);
 
-    setPresident();
     if(n1 == 1 && n2 == 3 ){
-        ui->lbl_log->setText("Voto em Dilma registrado na EPROM.");
-    }else{
-        if(n1 == 5 && n2 == 1 ){
+            ui->lbl_log->setText("Voto em Fora-Dilma e Ficalo-ei Temer!! registrado na EPROM.");
+            setPresidentImage(2);
+    }
+
+    if(n1 == 5 && n2 == 1 ){
             ui->lbl_log->setText("Voto em Molusco registrado na EPROM.");
-        }else{
-            if(count % 2 == 0){
-                ui->lbl_log->setText("Voto em Dilma registrado na EPROM.");
-            }else{
-                ui->lbl_log->setText("Voto em Aecio registrado na EPROM.");
-            }
-        }
+            setPresidentImage(3);
+    }
+
+    if(n1 == 4 && n2 == 5 ){
+            ui->lbl_log->setText("Voto em Aécio registrado na EPROM.");
+            setPresidentImage(1);
+    }
+
+    if(n1 != 1 || n1 !=5 || n1 != 4){
+        ui->lbl_numero1_president->setText("");
+        ui->lbl_numero2_president->setText("");
+        ui->lbl_log->setText("Voto NULO registrado!");
     }
 }
 
@@ -61,23 +75,23 @@ void MainWindow::on_btn_corrige_clicked()
     block_buttons(false);
 }
 
-void MainWindow::setPresident()
+void MainWindow::setPresidentImage(int PresidentID)
 {
-    if(n1 == 4 && n2 == 5){
+    if(PresidentID == 1){
         QPixmap foto(":/images/aecio.jpg");
         ui->lbl_foto_presidente->setPixmap(foto);
         ui->lbl_nome_presidente->setText("Aecio");
         ui->lbl_nome_partido->setText("PSDB");
     }
 
-    if(n1 == 1 && n2 == 3){
+    if(PresidentID == 2){
         QPixmap foto(":/images/dilma.jpg");
         ui->lbl_foto_presidente->setPixmap(foto);
         ui->lbl_nome_presidente->setText("Dilma");
         ui->lbl_nome_partido->setText("PT");
     }
 
-    if(n1 ==5 && n2 == 1){
+    if(PresidentID == 3){
         QPixmap foto(":/images/lula.jpg");
         ui->lbl_foto_presidente->setPixmap(foto);
         ui->lbl_nome_presidente->setText("Lula");
@@ -85,6 +99,11 @@ void MainWindow::setPresident()
         QPixmap foto2(":/images/pic_cachaca51.png");
         ui->lbl_lula_penquin->setPixmap(foto2);
     }
+
+    if(PresidentID == 0){
+        ui->lbl_log->setText("Candidato Inexistente. Confirma para votar NULO");
+    }
+
 }
 
 void MainWindow::set_number(int numero){
@@ -111,95 +130,95 @@ void MainWindow::set_number(int numero){
 }
 
 void MainWindow::block_buttons(bool set){
-    ui->btn_00->setDisabled(set);
-    ui->btn_11->setDisabled(set);
-    ui->btn_22->setDisabled(set);
-    ui->btn_33->setDisabled(set);
-    ui->btn_44->setDisabled(set);
-    ui->btn_55->setDisabled(set);
-    ui->btn_66->setDisabled(set);
-    ui->btn_77->setDisabled(set);
-    ui->btn_88->setDisabled(set);
-    ui->btn_99->setDisabled(set);
+    ui->btn_0->setDisabled(set);
+    ui->btn_1->setDisabled(set);
+    ui->btn_2->setDisabled(set);
+    ui->btn_3->setDisabled(set);
+    ui->btn_4->setDisabled(set);
+    ui->btn_5->setDisabled(set);
+    ui->btn_6->setDisabled(set);
+    ui->btn_7->setDisabled(set);
+    ui->btn_8->setDisabled(set);
+    ui->btn_9->setDisabled(set);
 }
 
-void MainWindow::on_btn_00_clicked()
+void MainWindow::on_btn_0_clicked()
 {
     set_number(0);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_11_clicked()
+void MainWindow::on_btn_1_clicked()
 {
     set_number(1);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_22_clicked()
+void MainWindow::on_btn_2_clicked()
 {
     set_number(3);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_33_clicked()
+void MainWindow::on_btn_3_clicked()
 {
     set_number(3);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_44_clicked()
+void MainWindow::on_btn_4_clicked()
 {
     set_number(4);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_55_clicked()
+void MainWindow::on_btn_5_clicked()
 {
     set_number(5);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_66_clicked()
+void MainWindow::on_btn_6_clicked()
 {
     set_number(6);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_77_clicked()
+void MainWindow::on_btn_7_clicked()
 {
     set_number(7);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_88_clicked()
+void MainWindow::on_btn_8_clicked()
 {
     set_number(8);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 
-void MainWindow::on_btn_99_clicked()
+void MainWindow::on_btn_9_clicked()
 {
     set_number(9);
     if(s1 == true && s2 == true){
-        setPresident();
+        setPresidentImage(0);
     }
 }
 

@@ -16,19 +16,19 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btn_00_clicked();
-    void on_btn_11_clicked();
-    void on_btn_22_clicked();
-    void on_btn_33_clicked();
-    void on_btn_44_clicked();
-    void on_btn_55_clicked();
-    void on_btn_66_clicked();
-    void on_btn_77_clicked();
-    void on_btn_88_clicked();
-    void on_btn_99_clicked();
+    void on_btn_0_clicked();
+    void on_btn_1_clicked();
+    void on_btn_2_clicked();
+    void on_btn_3_clicked();
+    void on_btn_4_clicked();
+    void on_btn_5_clicked();
+    void on_btn_6_clicked();
+    void on_btn_7_clicked();
+    void on_btn_8_clicked();
+    void on_btn_9_clicked();
 
     void on_btn_confirma_clicked();
-    void setPresident();
+    void setPresidentImage(int PresidentID);
     void on_btn_corrige_clicked();
     void set_number(int n1);
     void block_buttons(bool set);
