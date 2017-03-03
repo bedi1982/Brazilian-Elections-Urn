@@ -7,4 +7,4 @@ My Version:
 ![Alt text](/Screenshot_v1.png)
 
 The Original:
-![Alt text](http://www.informe.me/politica/wp-content/uploads/2014/06/UrnaEletronica.jpg)
+![Alt text](https://i.ytimg.com/vi/kAHN4TlWOzk/maxresdefault.jpg)
